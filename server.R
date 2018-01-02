@@ -6,4 +6,7 @@ shinyServer(function(input,output){
   output$table<-renderTable(
     summary(subset(saida,select=input$classe))
   )
+  output$plot<-renderPlot({
+    plot(subset(saida,select=input$classe))
+  })
 })
