@@ -3,9 +3,9 @@ dados=read.csv2("energia.csv",header=T)
 saida=dados[,2:6]
 rownames(saida)=dados[,1]
 shinyServer(function(input,output){ 
-  output$table<-renderTable(
+  output$table<-renderTable({
     summary(subset(saida,select=input$classe))
-  )
+  })
   output$plot<-renderPlot({
     plot(subset(saida,select=input$classe))
   })
