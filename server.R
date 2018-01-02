@@ -1,7 +1,9 @@
 library(shiny)
-data(iris)
+dados=read.csv2("energia.csv",header=T)
+saida=dados[,2:6]
+rownames(saida)=dados[,1]
 shinyServer(function(input,output){
   output$table<-renderTable(
-    summary(subset(iris,Species==input$species)[,-5])
+    tail(saida[,input$classe])
   )
 })
