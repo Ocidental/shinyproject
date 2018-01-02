@@ -4,9 +4,11 @@ library(shiny)
        sidebarLayout(
          sidebarPanel(
            selectInput("classe","selecione uma classe de consumo:",
-                       c("comercial","residencial","industrial","outras","total"))),
+                       c("comercial","residencial","industrial","outros","Brasil"))),
          mainPanel(
-           tableOutput("table")
-         )
-)
+           tabsetPanel( 
+             tabPanel("Summaries",tableOutput("table"),  
+             tabPanel("Graphics",plotOutput("plot"))
+         ) )      
+   )
 ))
