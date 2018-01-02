@@ -7,6 +7,6 @@ shinyServer(function(input,output){
     summary(subset(saida,select=input$classe))
   })
   output$plot<-renderPlot({
-    plot(subset(saida,select=input$classe))
+    plot(subset(saida,select=input$classe)[,-5],type="l",xlab="meses",ylab="GWh")
   })
 })
