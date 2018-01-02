@@ -4,6 +4,6 @@ saida=dados[,2:6]
 rownames(saida)=dados[,1]
 shinyServer(function(input,output){ 
   output$table<-renderTable(
-    summary(saida[,1])
+    summary(as.numeric(as.matrix(subset(saida,select=input$class))))
   )
 })
