@@ -1,10 +1,10 @@
 library(shiny)
   shinyUI(fluidPage(
-     titlePanel("Exemplo 2"),
+     titlePanel("Consumo Energia no Brasil"),
        sidebarLayout(
          sidebarPanel(
-           selectInput("species","select a species:",
-                       c("setosa","versicolor","virginica"))),
+           selectInput("classe","selecione uma classe de consumo:",
+                       c("comercial","residencial","industrial","outras","total"))),
          mainPanel(
            tableOutput("table")
          )
