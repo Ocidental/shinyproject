@@ -7,7 +7,7 @@ library(shiny)
                        c("comercial","residencial","industrial","outros","Brasil"))),
          mainPanel(
            tabsetPanel( 
-             tabPanel("Summaries",tableOutput("table"),  
+             tabPanel("Summaries",tableOutput("table")),  
              tabPanel("Graphics",plotOutput("plot"))
          ) )      
    )
